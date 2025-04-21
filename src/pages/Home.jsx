@@ -9,13 +9,16 @@ import TestimonialCarousel from '../components/home/TestimonialCarousel'
 import NewsLetterSignup from '../components/home/NewsLetterSignup'
 
 const Home = () => {
+  const trustTitle = <>
+    WHY LAGOS DRIVERS <br className='lg:hidden' /> TRUST US
+  </>
   return (
     <>
       <Hero />
       <Sponsors />
       <LookingToBuy />
       <WelcomeSection />
-      <TrustSection />
+      <TrustSection title={trustTitle} />
       <FeaturedCars />
       <TestimonialCarousel />
       <NewsLetterSignup />

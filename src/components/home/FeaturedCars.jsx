@@ -1,29 +1,12 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
-
-const cars = Array(6).fill({
-	name: 'T-Cross',
-	year: '2023',
-	price: '₦15,000,000',
-	description: '4.0 D5 PowerPulse Momentum...',
-	image: '/featured-car.png', // Replace with your actual image path
-	specs: [
-		{
-			text: '15 Miles',
-			icon: '/speed-icon.png',
-		},
-		{
-			text: 'Petrol',
-			icon: '/petrol-icon.png',
-		},
-		{
-			text: 'CVT',
-			icon: '/cvt-icon.png',
-		},
-	],
-});
+import { useNavigate } from 'react-router-dom';
+import { cars } from '../../utils/data';
+import { useFavourites } from '../../context/FavouritesContext';
 
 const FeaturedCars = ({ title = 'FEATURED CARS' }) => {
+	const navigate = useNavigate();
+	const { toggleFavourite, isFavourite } = useFavourites();
 	return (
 		<section className='mb-20 px-4 lg:px-[10.2rem]'>
 			<h2 className='text-center text-2xl md:text-3xl font-semibold text-gray-800 '>
@@ -41,8 +24,14 @@ const FeaturedCars = ({ title = 'FEATURED CARS' }) => {
 							alt={car.name}
 							className='w-full h-48 object-cover'
 						/>
-						<button className='absolute top-3 right-3 p-2 bg-white rounded-full shadow'>
-							<Heart className='text-gray-500 w-5 h-5' />
+						<button
+							onClick={() => toggleFavourite(car)}
+							className='absolute top-3 right-3 p-2 bg-white rounded-full shadow transition-colors'>
+							<Heart
+								className={`w-5 h-5 ${
+									isFavourite(car.id) ? 'text-red-500 fill-red-500' : 'text-gray-500'
+								}`}
+							/>
 						</button>
 
 						<div className='p-4'>
@@ -69,7 +58,9 @@ const FeaturedCars = ({ title = 'FEATURED CARS' }) => {
 									</li>
 								))}
 							</ul>
-							<button className='w-full bg-primary text-white text-sm py-2 rounded hover:bg-primary'>
+							<button
+								onClick={() => navigate(`/car/${car.id}`)}
+								className='w-full bg-primary text-white text-sm py-4 rounded hover:bg-primary'>
 								View Details
 							</button>
 						</div>

@@ -2,7 +2,7 @@
 export default function NewsletterSignup() {
 	return (
 		<section className='mb-20 px-4 lg:px-[10.2rem]'>
-			<div className="py-12 bg-white text-center">
+			<div className=" bg-white text-center">
 			    <h2 className='text-xl md:text-2xl font-semibold mb-6'>
     				Be the first to know when new <br /> cars land in Lagos
     			</h2>
@@ -19,7 +19,7 @@ export default function NewsletterSignup() {
     				/>
     				<button
     					type='submit'
-    					className='w-full bg-primary text-white font-semibold py-2 rounded-md hover:bg-primary/80 transition'>
+    					className='w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-primary/80 transition'>
     					Join Our Email List
     				</button>
     			</form>

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -41,7 +41,7 @@ export default function TestimonialCarousel() {
 		<section className='mb-20 px-4 lg:px-[10.2rem]'>
 			<div className='bg-pink-50 py-12'>
 				<h2 className='text-2xl font-semibold text-center mb-4'>
-					What Our Clients Say About Us
+					What Our Clients Say <br className='lg:hidden' /> About Us
 				</h2>
 
 				{/* Custom navigation + pagination */}
@@ -62,10 +62,11 @@ export default function TestimonialCarousel() {
 				</div>
 
 				<Swiper
-					modules={[Navigation, Pagination]}
+					modules={[Navigation, Pagination, Autoplay]}
+					autoplay={{ delay: 2000, disableOnInteraction: false }}
+					loop={true}
 					slidesPerView={3}
 					centeredSlides
-					loop
 					spaceBetween={30}
 					navigation={{
 						prevEl: prevRef.current,
