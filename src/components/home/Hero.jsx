@@ -1,19 +1,16 @@
 // src/components/Hero.jsx
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useCarContext } from '../../context/CarContext';
+import SearchBar from './SearchBar';
 const Hero = () => {
 	const navigate = useNavigate();
+	const { searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } =
+		useCarContext();
 	return (
 		<section className='font-mont bg-white overflow-hidden md:px-0 lg:px-0 lg:pl-[10.2rem]'>
 			{/* Search Bar */}
-			<div className='w-full lg:w-[90%] relative container px-4 mb-5'>
-				<input
-					type='text'
-					placeholder='Search for anything'
-					className='bg-white border border-neutral/20 w-full rounded-xl px-[4rem] py-4 focus:outline-none focus:border-primary focus:border'
-				/>
-				<FaSearch className='absolute text-neutral top-[21px] left-12 lg:left-[3.5rem]' />
-			</div>
+			<SearchBar />
 			<div className='max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between relative'>
 				{/* Left content */}
 				<div className='w-full lg:w-1/2 text-center lg:text-left z-10'>

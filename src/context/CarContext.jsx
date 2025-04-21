@@ -6,6 +6,7 @@ const CarContext = createContext();
 export const CarProvider = ({ children }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState('');
+    
 
 	const filteredCars = allCars.filter((car) => {
 		const matchesSearch = car.name
