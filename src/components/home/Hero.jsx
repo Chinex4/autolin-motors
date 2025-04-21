@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const Hero = () => {
 	return (
 		<section className='font-mont bg-white overflow-hidden md:px-0 lg:px-0 lg:pl-[10.2rem]'>
@@ -29,9 +30,9 @@ const Hero = () => {
 
 					{/* CTA Button */}
 					<div className='mt-6'>
-						<button className='bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/80 transition'>
+						<Link to={'/shop'} className='bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/80 transition'>
 							Browse Our Cars &rarr;
-						</button>
+						</Link>
 					</div>
 				</div>
 
