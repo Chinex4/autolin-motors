@@ -5,12 +5,15 @@ import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { FavouritesProvider } from './context/FavouritesContext.jsx';
 import { ToastContainer } from 'react-toastify';
+import { CarProvider } from './context/CarContext.jsx';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<BrowserRouter>
 			<FavouritesProvider>
-				<App />
+				<CarProvider>
+					<App />
+				</CarProvider>
 			</FavouritesProvider>
 			<ToastContainer
 				position='top-right'

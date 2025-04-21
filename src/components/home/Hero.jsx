@@ -1,7 +1,8 @@
 // src/components/Hero.jsx
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Hero = () => {
+	const navigate = useNavigate();
 	return (
 		<section className='font-mont bg-white overflow-hidden md:px-0 lg:px-0 lg:pl-[10.2rem]'>
 			{/* Search Bar */}
@@ -30,9 +31,11 @@ const Hero = () => {
 
 					{/* CTA Button */}
 					<div className='mt-6'>
-						<Link to={'/shop'} className='bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/80 transition'>
+						<button
+							onClick={() => navigate('/shop')}
+							className='bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/80 transition'>
 							Browse Our Cars &rarr;
-						</Link>
+						</button>
 					</div>
 				</div>
 
