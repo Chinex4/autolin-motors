@@ -13,5 +13,24 @@
 .swiper-pagination-bullet-active {
 	background-color: #d90032 !important;
 	transform: scale(1.4);
-  }
-  
+}
+
+@keyframes scroll-sponsors {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.marquee-sponsor {
+	overflow: hidden;
+	position: relative;
+}
+
+.marquee-track-sponsor {
+	display: flex;
+	width: 200%; /* Enough width for duplicated content */
+	animation: scroll-sponsors 40s linear infinite;
+}
