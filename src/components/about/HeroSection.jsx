@@ -9,7 +9,7 @@ const HeroSection = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8 }}
 			>
-				<img src='/about-hero.png' alt='About Hero' />
+				<img className='mx-auto' src='/about-hero.png' alt='About Hero' />
 			</motion.div>
 
 			<div className='mt-6 text-center'>

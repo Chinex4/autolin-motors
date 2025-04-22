@@ -43,13 +43,14 @@ export default function NewsletterSignup() {
 						variants={fadeInUp}
 						custom={2}
 					/>
-					<motion.button
-						type='submit'
-						className='w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-primary/80 transition'
+					<motion.a
+						// type='submit'
+						href='mailto:autolinmotors@gmail.com'
+						className='block w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-primary/80 transition'
 						variants={fadeInUp}
 						custom={3}>
 						Join Our Email List
-					</motion.button>
+					</motion.a>
 				</motion.form>
 			</motion.div>
 		</section>

@@ -12,6 +12,7 @@ const Map = () => {
 				<img
 					src='/map.png'
 					alt='Map'
+					className='mx-auto'
 				/>
 			</motion.div>
 		</section>

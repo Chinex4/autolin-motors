@@ -1,5 +1,5 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { FaX } from 'react-icons/fa6';
 
 // Footer.jsx
 export default function Footer() {
@@ -59,36 +59,37 @@ export default function Footer() {
 							<li>Monday – Friday: 09:00AM – 08:00 PM</li>
 							<li>Saturday: 09:00AM – 07:00PM</li>
 							<li>Sunday: Closed</li>
+							<li className='mt-6'>Phone number: +2349051711633</li>
 						</ul>
 
 						<div className='mt-4'>
 							<h4 className='font-semibold mb-2'>Connect With Us</h4>
 							<div className='flex gap-4'>
-								<a href='#'>
-									<FaFacebook />
+								<a href='tel:+2349051711633'>
+									<FaPhone size={20} />
 								</a>
-								<a href='#'>
-									<FaX />
+								<a href='https://x.com/autolinmotors?t=vdwhusFYRg0s-WJ7oPCicg&s=09'>
+									<FaX size={20} />
 								</a>
-								<a href='#'>
-									<FaInstagram />
+								<a href='https://www.instagram.com/autolinmotors/profilecard/?igsh=MXJ5aWF0MmY2MmhvYQ=='>
+									<FaInstagram size={20} />
 								</a>
-								<a href='#'>
+								{/* <a href='#'>
 									<FaLinkedin />
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="bg-primary px-4 lg:px-[10.2rem]">
-			    <div className=' text-white py-4 flex flex-col md:flex-row justify-between text-xs'>
-    				<p>&copy; 2024 example.com. All rights reserved.</p>
-    				<div className='flex space-x-4 mt-2 md:mt-0'>
-    					<a href='#'>Terms & Conditions</a>
-    					<a href='#'>Privacy Notice</a>
-    				</div>
-    			</div>
+			<div className='bg-primary px-4 lg:px-[10.2rem]'>
+				<div className=' text-white py-4 flex flex-col md:flex-row justify-between text-xs'>
+					<p>&copy; 2024 example.com. All rights reserved.</p>
+					<div className='flex space-x-4 mt-2 md:mt-0'>
+						<a href='#'>Terms & Conditions</a>
+						<a href='#'>Privacy Notice</a>
+					</div>
+				</div>
 			</div>
 		</footer>
 	);

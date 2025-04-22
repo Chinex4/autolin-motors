@@ -80,11 +80,11 @@ export default function Navbar() {
 				</div>
 
 				{/* Contact Us Button (Desktop) */}
-				<Link
-					to='/contact'
+				<a
+					href='mailto:autolinmotors@gmail.com'
 					className='hidden lg:inline-block bg-primary text-white px-4 py-2 rounded-md font-semibold'>
 					CONTACT US
-				</Link>
+				</a>
 
 				{/* Hamburger Icon */}
 				<button
@@ -140,12 +140,12 @@ export default function Navbar() {
 									</li>
 								))}
 								<li>
-									<Link
-										to='/contact'
+									<a
+										href='mailto:autolinmotors@gmail.com'
 										className='bg-primary text-white px-4 py-2 rounded-md font-semibold inline-block'
 										onClick={() => setIsOpen(false)}>
 										CONTACT US
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</motion.div>
