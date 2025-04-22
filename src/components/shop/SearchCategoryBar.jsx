@@ -1,15 +1,34 @@
 import { SlOptionsVertical } from 'react-icons/sl';
 import { useCarContext } from '../../context/CarContext';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function SearchCategoryBar() {
 	const { searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } =
 		useCarContext();
 
-	const categories = ['SUV', 'Sedan', 'Truck', 'Coupe']; // customize as needed
+	const categories = ['SUV', 'Sedan', 'Truck', 'Coupe'];
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+	const fadeUp = {
+		hidden: { opacity: 0, y: 40 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.6, ease: 'easeOut' },
+		},
+	};
 
 	return (
-		<section className='mb-20 px-4 lg:px-[10.2rem]'>
-			<div className='max-w-6xl flex flex-col md:flex-row gap-4'>
+		<section
+			className='mb-20 px-4 lg:px-[10.2rem]'
+			ref={ref}>
+			<motion.div
+				className='max-w-6xl flex flex-col md:flex-row gap-4'
+				variants={fadeUp}
+				initial='hidden'
+				animate={isInView ? 'visible' : 'hidden'}>
 				<div className='flex items-center border border-gray-300 px-4 py-2 rounded-md w-full'>
 					<input
 						type='text'
@@ -33,7 +52,7 @@ export default function SearchCategoryBar() {
 						</option>
 					))}
 				</select>
-			</div>
+			</motion.div>
 		</section>
 	);
 }

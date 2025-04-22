@@ -2,30 +2,53 @@ import React from 'react';
 import { Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useFavourites } from '../../context/FavouritesContext';
-import { useCarContext } from '../../context/CarContext'; // <--- Make sure this path is correct
+import { useCarContext } from '../../context/CarContext';
+import { motion } from 'framer-motion';
 
 const FeaturedCars = ({ title = 'FEATURED CARS' }) => {
 	const navigate = useNavigate();
 	const { toggleFavourite, isFavourite } = useFavourites();
-	const { filteredCars } = useCarContext(); // <--- Use filteredCars from context
+	const { filteredCars } = useCarContext();
 
 	return (
 		<section className='mb-20 px-4 lg:px-[10.2rem]'>
-			<h2 className='text-center text-2xl md:text-3xl font-semibold text-gray-800'>
+			<motion.h2
+				className='text-center text-2xl md:text-3xl font-semibold text-gray-800'
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 0.7 }}>
 				{title}
-			</h2>
-			<div className='mt-1 w-40 mx-auto lg:w-[10rem] h-1 mb-8 bg-primary rounded-full' />
+			</motion.h2>
+
+			<motion.div
+				className='mt-1 w-40 mx-auto lg:w-[10rem] h-1 mb-8 bg-primary rounded-full'
+				initial={{ scaleX: 0 }}
+				whileInView={{ scaleX: 1 }}
+				viewport={{ once: true }}
+				transition={{ delay: 0.2, duration: 0.6 }}
+				style={{ transformOrigin: 'left' }}
+			/>
 
 			{filteredCars.length === 0 ? (
-				<p className='text-center text-gray-500 mt-8'>
+				<motion.p
+					className='text-center text-gray-500 mt-8'
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.5 }}>
 					No cars match your search.
-				</p>
+				</motion.p>
 			) : (
 				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
 					{filteredCars.map((car, index) => (
-						<div
+						<motion.div
 							key={index}
-							className='bg-white rounded-xl shadow-md overflow-hidden relative'>
+							className='bg-white rounded-xl shadow-md overflow-hidden relative'
+							initial={{ opacity: 0, y: 40 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ delay: index * 0.1, duration: 0.6 }}>
 							<img
 								src={car.image}
 								alt={car.name}
@@ -73,16 +96,23 @@ const FeaturedCars = ({ title = 'FEATURED CARS' }) => {
 									View Details
 								</button>
 							</div>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			)}
 
-			<div className='text-center mt-10'>
-				<button className='border border-primary text-primary hover:bg-primary px-6 py-2 rounded-md text-sm font-medium'>
+			<motion.div
+				className='text-center mt-10'
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ delay: 0.3, duration: 0.6 }}>
+				<button
+					onClick={() => navigate('/shop')}
+					className='border border-primary text-primary hover:bg-primary transition-all duration-300 hover:text-white px-6 py-2 rounded-md text-sm font-medium'>
 					View More
 				</button>
-			</div>
+			</motion.div>
 		</section>
 	);
 };

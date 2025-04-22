@@ -98,3 +98,54 @@ export const cars = [
 		],
 	},
 ];
+
+export const services = [
+	{
+		title: 'CAR SALES (TOKUNBO & NIGERIAN-USED CARS)',
+		description:
+			'Develop and implement tailored marketing strategies to target and engage your ideal audience effectively.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'CAR SOURCING & IMPORT SERVICES',
+		description:
+			'Need a rare model or custom spec? We help clients import cars from the USA, UAE, and Europe.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'CAR INSPECTION & VERIFICATION',
+		description:
+			'Every car sold is inspected, with history reports available for peace of mind.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'BUY-BACK & TRADE-IN SERVICES',
+		description:
+			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'BUY-BACK & TRADE-IN SERVICES',
+		description:
+			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'BUY-BACK & TRADE-IN SERVICES',
+		description:
+			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'BUY-BACK & TRADE-IN SERVICES',
+		description:
+			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
+		image: '/service-img.png',
+	},
+	{
+		title: 'BUY-BACK & TRADE-IN SERVICES',
+		description:
+			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
+		image: '/service-img.png',
+	},
+];

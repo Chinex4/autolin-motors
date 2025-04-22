@@ -1,56 +1,69 @@
-import React from 'react';
-// import { Star, DollarSign, Users } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 30 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const TrustSection = ({ title }) => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, amount: 0.3 });
+
 	return (
-		<section className='mb-20 px-4 lg:px-[10.2rem]'>
-			<div className='bg-red-50 py-10 px-4 lg:px-20 rounded-xl text-center max-w-5xl mx-auto'>
-				<h2 className='text-xl md:text-2xl font-semibold text-gray-900 mb-8'>
+		<section
+			className='mb-20 px-4 lg:px-[10.2rem]'
+			ref={ref}>
+			<motion.div
+				initial='hidden'
+				animate={isInView ? 'visible' : 'hidden'}
+				variants={{
+					hidden: { opacity: 0, y: 50 },
+					visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+				}}
+				className='bg-red-50 py-10 px-4 lg:px-20 rounded-xl text-center max-w-5xl mx-auto'>
+				<motion.h2
+					className='text-xl md:text-2xl font-semibold text-gray-900 mb-8'
+					variants={itemVariants}>
 					{title}
-				</h2>
+				</motion.h2>
+
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700'>
-					{/* Transparent Service */}
-					<div className='flex flex-col items-center gap-5'>
-						{/* <Star className='text-primary w-8 h-8 mb-2' /> */}
-						<img
-							src='/star-icon.png'
-							alt=''
-						/>
-						<p className='text-sm w-[15rem] lg:w-auto'>
-							Transparent, Trustworthy Service. No hidden charges. Just straight
-							talk and fair deals.
-						</p>
-					</div>
-
-					{/* Affordable Cars */}
-					<div className='flex flex-col items-center gap-5'>
-						{/* <DollarSign className='text-primary w-8 h-8 mb-2' /> */}
-						<img
-							src='/money-icon.png'
-							alt=''
-						/>
-						<p className='text-sm w-[15rem] lg:w-auto'>
-							Affordable Cars, Verified Quality. Carefully selected cars for
-							every budget.
-						</p>
-					</div>
-
-					{/* Community First */}
-					<div className='flex flex-col items-center gap-5'>
-						{/* <Users className='text-primary w-8 h-8 mb-2' /> */}
-						<img
-							src='/users-icon.png'
-							alt=''
-						/>
-						<p className='text-sm w-[15rem] lg:w-auto'>
-							Community - First Approach. You're not just a buyer, you're part
-							of the AUTOLIN family.
-						</p>
-					</div>
+					{[
+						{
+							img: '/star-icon.png',
+							text: 'Transparent, Trustworthy Service. No hidden charges. Just straight talk and fair deals.',
+						},
+						{
+							img: '/money-icon.png',
+							text: 'Affordable Cars, Verified Quality. Carefully selected cars for every budget.',
+						},
+						{
+							img: '/users-icon.png',
+							text: "Community - First Approach. You're not just a buyer, you're part of the AUTOLIN family.",
+						},
+					].map((item, idx) => (
+						<motion.div
+							key={idx}
+							className='flex flex-col items-center gap-5'
+							variants={itemVariants}
+							transition={{ delay: idx * 0.2 }}>
+							<img
+								src={item.img}
+								alt=''
+								className='w-10 h-10'
+							/>
+							<p className='text-sm w-[15rem] lg:w-auto'>{item.text}</p>
+						</motion.div>
+					))}
 				</div>
 
-				<div className='mt-6 w-44 lg:w-[15rem] h-1 bg-primary mx-auto rounded-full' />
-			</div>
+				<motion.div
+					className='mt-6 w-44 lg:w-[15rem] h-1 bg-primary mx-auto rounded-full'
+					variants={itemVariants}
+					transition={{ delay: 0.8 }}
+				/>
+			</motion.div>
 		</section>
 	);
 };

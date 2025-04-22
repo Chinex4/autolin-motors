@@ -1,20 +1,49 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const FavouritesSection = ({ favourites }) => {
+	const navigate = useNavigate();
+
 	return (
-		<section className='px-4 lg:px-[10.2rem] py-10'>
-            <h2 className='text-center text-2xl md:text-3xl font-semibold text-gray-800 '>
-                Your Favourite Cars
-			</h2>
+		<section className='px-4 lg:px-[10.2rem] py-6'>
+			<motion.h2
+				className='text-center text-2xl md:text-3xl font-semibold text-gray-800'
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 0.7 }}>
+				YOUR FAVOURITE CARS
+			</motion.h2>
+
+			<motion.div
+				className='mt-1 w-40 mx-auto lg:w-[10rem] h-1 mb-8 bg-primary rounded-full'
+				initial={{ scaleX: 0 }}
+				whileInView={{ scaleX: 1 }}
+				viewport={{ once: true }}
+				transition={{ delay: 0.2, duration: 0.6 }}
+				style={{ transformOrigin: 'left' }}
+			/>
 
 			{favourites.length === 0 ? (
-				<p className='text-gray-600'>No cars added to favourites yet.</p>
+				<motion.p
+					className='text-neutral text-center'
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.5 }}>
+					No cars added to favourites yet.
+				</motion.p>
 			) : (
 				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-					{favourites.map((car) => (
-						<div
+					{favourites.map((car, index) => (
+						<motion.div
 							key={car.id}
-							className='bg-white rounded-xl shadow-md overflow-hidden'>
+							className='bg-white rounded-xl shadow-md overflow-hidden'
+							initial={{ opacity: 0, y: 40 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.6, delay: index * 0.1 }}>
 							<img
 								src={car.image}
 								alt={car.name}
@@ -34,7 +63,7 @@ const FavouritesSection = ({ favourites }) => {
 									View Details
 								</button>
 							</div>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			)}

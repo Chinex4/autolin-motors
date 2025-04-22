@@ -1,69 +1,43 @@
-import React from 'react';
-
-const services = [
-	{
-		title: 'CAR SALES (TOKUNBO & NIGERIAN-USED CARS)',
-		description:
-			'Develop and implement tailored marketing strategies to target and engage your ideal audience effectively.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'CAR SOURCING & IMPORT SERVICES',
-		description:
-			'Need a rare model or custom spec? We help clients import cars from the USA, UAE, and Europe.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'CAR INSPECTION & VERIFICATION',
-		description:
-			'Every car sold is inspected, with history reports available for peace of mind.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'BUY-BACK & TRADE-IN SERVICES',
-		description:
-			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'BUY-BACK & TRADE-IN SERVICES',
-		description:
-			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'BUY-BACK & TRADE-IN SERVICES',
-		description:
-			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'BUY-BACK & TRADE-IN SERVICES',
-		description:
-			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
-		image: '/service-img.png',
-	},
-	{
-		title: 'BUY-BACK & TRADE-IN SERVICES',
-		description:
-			'Upgrade your ride by trading in your current vehicle. We offer fair market value.',
-		image: '/service-img.png',
-	},
-];
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { services } from '../../utils/data';
 
 export default function Servicess() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+	const cardVariants = {
+		hidden: { opacity: 0, y: 30 },
+		visible: (i) => ({
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: i * 0.2,
+				duration: 0.6,
+				ease: 'easeOut',
+			},
+		}),
+	};
+
 	return (
-		<section className='mb-20 px-4 lg:px-[10.2rem]'>
+		<section
+			className='mb-20 px-4 lg:px-[10.2rem]'
+			ref={ref}>
 			<div className='text-center mb-8'>
 				<h2 className='text-2xl font-bold tracking-wide uppercase'>
 					Our Services
 				</h2>
 				<div className='w-24 h-1 bg-primary mx-auto mt-2'></div>
 			</div>
+
 			<div className='max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8'>
 				{services.map((service, index) => (
-					<div
+					<motion.div
 						key={index}
+						variants={cardVariants}
+						initial='hidden'
+						animate={isInView ? 'visible' : 'hidden'}
+						custom={index}
 						className='bg-white shadow-md rounded overflow-hidden'>
 						<img
 							src={service.image}
@@ -81,7 +55,7 @@ export default function Servicess() {
 								REQUEST SERVICE
 							</button>
 						</div>
-					</div>
+					</motion.div>
 				))}
 			</div>
 		</section>
