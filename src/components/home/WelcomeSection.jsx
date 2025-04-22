@@ -29,7 +29,7 @@ const WelcomeSection = () => {
 					<img
 						src='/logo-mockup.png'
 						alt='Autolin Motors Building'
-						className='w-full h-auto object-cover rounded-xl shadow-md'
+						className='w-full h-auto object-cover rounded-xl'
 					/>
 				</motion.div>
 
