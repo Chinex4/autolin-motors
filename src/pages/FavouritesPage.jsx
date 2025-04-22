@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFavourites } from '../context/FavouritesContext';
 import { useNavigate } from 'react-router-dom';
 import FavouritesSection from '../components/favourites/FavouritesSection';
@@ -9,6 +9,9 @@ import NewsletterSignup from '../components/home/NewsLetterSignup';
 const FavouritesPage = () => {
 	const { favourites } = useFavourites();
 	const navigate = useNavigate();
+	useEffect(() => {
+		document.title = 'Favourites | Autolin Motors';
+	}, []);
 
 	return (
 		<>

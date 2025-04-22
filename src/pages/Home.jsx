@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../components/home/Hero'
 import Sponsors from '../components/home/Sponsors'
 import LookingToBuy from '../components/home/LookingToBuy'
@@ -12,6 +12,9 @@ const Home = () => {
   const trustTitle = <>
     WHY LAGOS DRIVERS <br className='lg:hidden' /> TRUST US
   </>
+  useEffect(() => {
+		document.title = 'Home | Autolin Motors';
+	}, []);
   return (
     <>
       <Hero />
