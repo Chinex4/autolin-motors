@@ -40,7 +40,8 @@ export default function CTASection() {
 							initial='hidden'
 							animate={isInView ? 'visible' : 'hidden'}
 							transition={{ delay: 0.2 }}
-							href='https://wa.me/234xxxxxxxxxx'
+							href='https://wa.me/2349051711633'
+							target='_blank'
 							className='bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-md font-semibold transition'>
 							Send A Whatsapp Message
 						</motion.a>

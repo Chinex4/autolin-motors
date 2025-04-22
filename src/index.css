@@ -34,3 +34,9 @@
 	width: 200%; /* Enough width for duplicated content */
 	animation: scroll-sponsors 40s linear infinite;
 }
+
+@media screen and (max-width: 500px) {
+	.marquee-track-sponsor {
+		animation: scroll-sponsors 4s linear infinite;
+	}
+}

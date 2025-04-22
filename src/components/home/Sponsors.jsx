@@ -19,11 +19,11 @@ const Sponsors = () => {
 					{loopedSponsors.map((logo, index) => (
 						<div
 							key={index}
-							className='flex justify-center items-center flex-shrink-0 mx-6 w-[120px]'>
+							className='flex justify-center items-center flex-shrink-0 mx-6 w-[80px]'>
 							<img
 								src={logo}
 								alt={`Sponsor ${index}`}
-								className='w-full h-auto object-contain'
+								className='w-[100px] object-contain'
 							/>
 						</div>
 					))}
