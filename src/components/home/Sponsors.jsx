@@ -12,11 +12,11 @@ import peugeot from '../../assets/images/sp5.png';
 import bmw from '../../assets/images/sp6.png';
 import bmw2 from '../../assets/images/sp7.png';
 
-const sponsors = [audi, vw, ford, mercedes, peugeot, bmw, ford, bmw2,];
+const sponsors = [audi, vw, ford, mercedes, peugeot, bmw, ford, bmw2];
 
 const Sponsors = () => {
 	return (
-		<div className='py-4 bg-white border-t border-b border-neutral/20 mt-20 px-4 lg:px-[10.2rem]'>
+		<div className='py-4 bg-white max-w-7xl mx-auto border-t border-b border-neutral/20 mt-20 px-4 lg:px-[10.2rem]'>
 			<Swiper
 				modules={[Autoplay]}
 				autoplay={{ delay: 2000, disableOnInteraction: false }}

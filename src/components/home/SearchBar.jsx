@@ -15,16 +15,16 @@ const SearchBar = () => {
 	};
 
 	return (
-		<div className='w-full lg:w-[90%] relative container px-4 mb-5'>
+		<div className='w-full relative container mb-5'>
 			<input
 				type='text'
 				value={searchQuery}
 				onChange={(e) => setSearchQuery(e.target.value)}
 				onKeyDown={handleKeyDown}
 				placeholder='Search any car'
-				className='bg-white border border-neutral/20 w-full rounded-xl px-[4rem] py-4 focus:outline-none focus:border-primary focus:border'
+				className='bg-white border border-neutral/20 w-full rounded-xl px-[4rem] lg:mr-[10.2rem] py-4 focus:outline-none focus:border-primary focus:border'
 			/>
-			<FaSearch className='absolute text-neutral top-[21px] left-12 lg:left-[3.5rem]' />
+			<FaSearch className='absolute text-neutral top-[21px] left-12 lg:left-[2.5rem]' />
 		</div>
 	);
 };

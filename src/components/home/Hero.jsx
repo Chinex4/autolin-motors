@@ -12,7 +12,9 @@ const Hero = () => {
 	return (
 		<section className='font-mont bg-white overflow-hidden md:px-0 lg:px-0 lg:pl-[10.2rem]'>
 			{/* Search Bar */}
-			<SearchBar />
+			<div className='max-w-7xl mx-auto lg:mr-[10rem]'>
+				<SearchBar />
+			</div>
 
 			<div className='max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between relative'>
 				{/* Left content */}
