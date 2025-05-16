@@ -9,10 +9,44 @@ import ScrollToTop from './components/ScrollToTop';
 import CarDetails from './pages/CarDetails';
 import FavouritesPage from './pages/FavouritesPage';
 // import NotFound from './pages/NotFound';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 	return (
 		<>
+			<Toaster
+				position='top-right'
+				toastOptions={{
+					// Global default styles
+					style: {
+						background: '#fff',
+						color: '#000',
+						border: '1px solid #d90032',
+						borderRadius: '8px',
+						padding: '12px 16px',
+					},
+					success: {
+						iconTheme: {
+							primary: '#d90032',
+							secondary: '#fff0f3',
+						},
+						style: {
+							border: '1px solid #d90032',
+							color: '#d90032',
+						},
+					},
+					error: {
+						iconTheme: {
+							primary: '#d90032',
+							secondary: '#fff0f3',
+						},
+						style: {
+							border: '1px solid #d90032',
+							color: '#d90032',
+						},
+					},
+				}}
+			/>
 			<ScrollToTop />
 			<Routes>
 				<Route
