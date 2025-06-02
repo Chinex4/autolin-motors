@@ -28,9 +28,9 @@ const LookingToBuy = () => {
 								service.
 							</p>
 						</div>
-						<button className='bg-white mt-20 text-[#3e8ee9] flex items-center gap-1 text-sm font-medium px-4 py-3 rounded-md'>
+						<a target='_blank' href='https://wa.me/2349051711633' className='bg-white mt-20 text-[#3e8ee9] inline-flex items-center gap-1 text-sm font-medium px-4 py-3 rounded-md'>
 							Get Started <FiExternalLink size={14} />
-						</button>
+						</a>
 						<div className='absolute bottom-4 -right-10 lg:right-4 opacity-70'>
 							<img
 								className='w-[70%] lg:w-full'
@@ -53,9 +53,9 @@ const LookingToBuy = () => {
 								service.
 							</p>
 						</div>
-						<button className='bg-white mt-20 text-[#01b26b] flex items-center gap-1 text-sm font-medium px-4 py-3 rounded-md'>
+						<a target='_blank' href='https://wa.me/2349051711633' className='bg-white mt-20 text-[#01b26b] inline-flex items-center gap-1 text-sm font-medium px-4 py-3 rounded-md'>
 							Get Started <FiExternalLink size={14} />
-						</button>
+						</a>
 						<div className='absolute bottom-4 -right-10 lg:right-4 opacity-70'>
 							<img
 								className='w-[70%] lg:w-full'

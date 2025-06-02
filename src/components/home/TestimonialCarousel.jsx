@@ -8,28 +8,28 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
 	{
-		name: 'Hannah Schmitt',
-		role: 'Lead Designer',
-		photo: '/lady-1.png',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		name: 'Oladotun A.',
+		role: 'Client',
+		photo: '/user.png',
+		text: 'I had an exceptional experience with the services provided. The team was professional and attentive to my needs, ensuring everything was handled smoothly. Highly recommend!',
 	},
 	{
-		name: 'Hannah Schmitt',
-		role: 'Lead Designer',
-		photo: '/lady-2.png',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		name: 'Sylvester',
+		role: 'Customer',
+		photo: '/user.png',
+		text: 'The service I received exceeded my expectations. The staff was knowledgeable and went above and beyond to assist me. I will definitely be returning for future needs!',
 	},
 	{
-		name: 'Hannah Schmitt',
-		role: 'Lead Designer',
-		photo: '/lady-3.png',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		name: 'Ojochide',
+		role: 'Client',
+		photo: '/user.png',
+		text: 'I am thoroughly impressed with the quality of service. The attention to detail and commitment to customer satisfaction were evident throughout my experience. Great job!',
 	},
 	{
-		name: 'Hannah Schmitt',
-		role: 'Lead Designer',
-		photo: '/lady-3.png',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		name: 'Awe Olayinka',
+		role: 'Customer',
+		photo: '/user.png',
+		text: 'Fantastic service from start to finish! The team was friendly and efficient, making the entire process easy and enjoyable. I couldn’t be happier with the results!',
 	},
 ];
 
@@ -49,7 +49,7 @@ export default function TestimonialCarousel() {
 					<h2 className='text-2xl font-semibold text-center mb-4'>
 						What Our Clients Say <br className='lg:hidden' /> About Us
 					</h2>
-	
+
 					{/* Navigation & Pagination */}
 					<div className='mx-auto w-[8rem] flex justify-center items-center space-x-4 mb-8'>
 						<button
@@ -67,7 +67,7 @@ export default function TestimonialCarousel() {
 							<ChevronRight />
 						</button>
 					</div>
-	
+
 					{swiperReady && (
 						<Swiper
 							modules={[Navigation, Pagination, Autoplay]}
