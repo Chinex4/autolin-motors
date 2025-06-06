@@ -10,8 +10,29 @@ import CarDetails from './pages/CarDetails';
 import FavouritesPage from './pages/FavouritesPage';
 // import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
+import MagazineModal from './components/MagazineModal';
+import { useEffect, useState } from 'react';
 
 function App() {
+	const [showModal, setShowModal] = useState(false);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setShowModal(true);
+		}, 60000); // Show every 3 minutes
+
+		return () => clearInterval(interval);
+	}, []);
+
+	useEffect(() => {
+		const hasShown = sessionStorage.getItem('magazineModalShown');
+		if (!hasShown) {
+			setTimeout(() => {
+				setShowModal(true);
+				sessionStorage.setItem('magazineModalShown', 'true');
+			}, 1000); // show after 1 second on first load
+		}
+	}, []);
 	return (
 		<>
 			<Toaster
@@ -82,6 +103,10 @@ function App() {
 					/> */}
 				</Route>
 			</Routes>
+			<MagazineModal
+				isOpen={showModal}
+				onClose={() => setShowModal(false)}
+			/>
 		</>
 	);
 }
